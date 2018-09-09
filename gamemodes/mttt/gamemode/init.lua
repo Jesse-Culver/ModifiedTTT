@@ -173,6 +173,10 @@ function GM:Initialize()
       [OPEN_NOTOGGLE]= true
    };
 
+   --Setup of the player model tables
+   playerModelFileSetup()
+   FillPlayerModelTable()
+
    -- More map config ent defaults
    GAMEMODE.force_plymodel = ""
    GAMEMODE.propspec_allow_named = true
@@ -253,6 +257,63 @@ function SendRoundState(state, ply)
       net.WriteUInt(state, 3)
    return ply and net.Send(ply) or net.Broadcast()
 end
+
+-- Checks to make sure that the player model list files exist and if not creates one
+function playerModelFileSetup()
+	-- Setup the default contents of the playermodels.txt and detectives.txt
+  -- If you have custom models you want to use you would add them to the files in dc/data NOT HERE
+	-- Make sure you do not tab over, it looks ugly but it will add the tab to the file if we don't
+	local contents = [[
+models/player/group01/male_01.mdl
+models/player/group01/male_02.mdl
+models/player/group01/male_03.mdl
+models/player/group01/male_04.mdl
+models/player/group01/male_05.mdl
+models/player/group01/male_06.mdl
+models/player/group01/male_07.mdl
+models/player/group01/male_08.mdl
+models/player/group01/male_09.mdl
+models/player/group01/female_01.mdl
+models/player/group01/female_02.mdl
+models/player/group01/female_03.mdl
+models/player/group01/female_04.mdl
+models/player/group01/female_05.mdl
+models/player/group01/female_06.mdl
+models/player/group03/female_01.mdl
+models/player/group03/female_02.mdl
+models/player/group03/female_03.mdl
+models/player/group03/female_04.mdl
+models/player/group03/female_05.mdl
+models/player/group03/female_06.mdl
+models/player/group03/male_01.mdl
+models/player/group03/male_02.mdl
+models/player/group03/male_03.mdl
+models/player/group03/male_04.mdl
+models/player/group03/male_05.mdl
+models/player/group03/male_06.mdl
+models/player/group03/male_07.mdl
+models/player/group03/male_08.mdl
+models/player/group03/male_09.mdl]]
+	local detectiveContents = [[
+models/player/alyx.mdl
+models/player/barney.mdl
+models/player/kleiner.mdl
+models/player/monk.mdl
+models/player/odessa.mdl
+models/player/eli.mdl
+models/player/mossman.mdl]]
+	-- Check if the ttt directory even exists in the data folder
+	if file.IsDir("mttt", "DATA") != true then
+		file.CreateDir("mttt")
+	end
+	-- Check if the file exists
+	if file.Read("mttt/playermodels.txt") == nil then
+		file.Write("mttt/playermodels.txt", contents)
+	end
+	if file.Read("mttt/detectives.txt") == nil then
+		file.Write("mttt/detectives.txt", detectiveContents)
+	end
+ end
 
 -- Round state is encapsulated by set/get so that it can easily be changed to
 -- eg. a networked var if this proves more convenient
@@ -651,6 +712,13 @@ function BeginRound()
    -- Select traitors & co. This is where things really start so we can't abort
    -- anymore.
    SelectRoles()
+   --Set Detective model to a random one from our file
+   dmodel = GetRandomDetectiveModel()
+   for k,v in pairs(player.GetAll()) do
+      if IsValid(v) and (v:GetRole() == ROLE_DETECTIVE) then
+        v:SetModel(dmodel)
+      end
+   end
    LANG.Msg("round_selected")
    SendFullStateUpdate()
 

@@ -102,15 +102,30 @@ function GM:CreateTeams()
 end
 
 -- Everyone's model
-local ttt_playermodels = {
-   Model("models/player/phoenix.mdl"),
-   Model("models/player/arctic.mdl"),
-   Model("models/player/guerilla.mdl"),
-   Model("models/player/leet.mdl")
+local mttt_playermodels = {
 };
+-- Detective player models
+local mttt_detectivemodels = {
+};
+ -- Fill the player model table using our file
+function FillPlayerModelTable()
+	local modelFile = file.Read("mttt/playermodels.txt")
+	local modelTableTemp = string.Explode("\n", modelFile)
+	local modelDetectiveFile = file.Read("mttt/detectives.txt")
+	local modelDetectiveTableTemp = string.Explode("\n", modelDetectiveFile)
+	for k, v in pairs(modelTableTemp) do
+		table.insert(mttt_playermodels, k, Model(v))
+	end
+	for k, v in pairs(modelDetectiveTableTemp) do
+		table.insert(mttt_detectivemodels, k, Model(v))
+	end
+end
 
 function GetRandomPlayerModel()
-   return table.Random(ttt_playermodels)
+   return table.Random(mttt_playermodels)
+end
+function GetRandomDetectiveModel()
+  return table.Random(mttt_detectivemodels)
 end
 
 local ttt_playercolors = {

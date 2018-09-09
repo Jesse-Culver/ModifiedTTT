@@ -93,6 +93,8 @@ CreateConVar("ttt_limit_spectator_chat", "1", FCVAR_ARCHIVE + FCVAR_NOTIFY)
 CreateConVar("ttt_limit_spectator_voice", "1", FCVAR_ARCHIVE + FCVAR_NOTIFY)
 
 function GM:PlayerCanSeePlayersChat(text, team_only, listener, speaker)
+  --[[ Disabled text chat, mics only!
+
 	if (not IsValid(listener)) then return false end
 	if (not IsValid(speaker)) then
 		if isentity(speaker) then
@@ -113,7 +115,7 @@ function GM:PlayerCanSeePlayersChat(text, team_only, listener, speaker)
 	(sTeam and lTeam) then   -- If the speaker and listener are spectators
 	   return true
 	end
-
+  --]]
 	return false
 end
 

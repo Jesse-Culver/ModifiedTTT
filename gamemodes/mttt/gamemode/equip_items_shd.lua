@@ -49,16 +49,17 @@ EquipmentItems = {
          material = mat_dir .. "icon_armor",
          name     = "item_armor",
          desc     = "item_armor_desc"
-      },
+      }
 
-      -- radar
+      -- radar, removed from detective because it's kind of OP
+      --[[
       {  id       = EQUIP_RADAR,
          type     = "item_active",
          material = mat_dir .. "icon_radar",
          name     = "item_radar",
          desc     = "item_radar_desc"
       }
-
+      --]]
 
       -- The default TTT equipment uses the language system to allow
       -- translation. Below is an example of how the type, name and desc fields

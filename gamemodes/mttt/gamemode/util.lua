@@ -302,10 +302,10 @@ end
 if CLIENT then
    local healthcolors = {
       healthy = Color(0, 255, 0, 255),
-      hurt    = Color(170, 230, 10, 255),
-      wounded = Color(230, 215, 10, 255),
-      badwound= Color(255, 140, 0, 255),
-      death   = Color(255, 0, 0, 255)
+      hurt    = Color(0, 255, 0, 255),
+      wounded = Color(0, 255, 0, 255),
+      badwound= Color(0, 255, 0, 255),
+      death   = Color(0, 255, 0, 255)
    };
 
    function util.HealthToString(health, maxhealth)

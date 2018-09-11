@@ -554,7 +554,7 @@ L.overtime     = "VERLÄNGERUNG"
 L.hastemode    = "HAST MODUS"
 
 -- TargetID health status
-L.hp_healthy   = "Gesund"
+L.hp_healthy   = "Leben"
 L.hp_hurt      = "Verletzt"
 L.hp_wounded   = "Verwundet"
 L.hp_badwnd    = "Schwer Verwundet"

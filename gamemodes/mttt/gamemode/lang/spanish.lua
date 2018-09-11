@@ -572,7 +572,7 @@ L.overtime     = "PRÓRROGA"
 L.hastemode    = "MODO PRISA"
 
 -- TargetID health status
-L.hp_healthy   = "Saludable"
+L.hp_healthy   = "Vivo"
 L.hp_hurt      = "Dañado"
 L.hp_wounded   = "Herido"
 L.hp_badwnd    = "Gravemente herido"

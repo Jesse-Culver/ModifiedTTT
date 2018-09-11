@@ -309,19 +309,7 @@ if CLIENT then
    };
 
    function util.HealthToString(health, maxhealth)
-      maxhealth = maxhealth or 100
-
-      if health > maxhealth * 0.9 then
          return "hp_healthy", healthcolors.healthy
-      elseif health > maxhealth * 0.7 then
-         return "hp_hurt", healthcolors.hurt
-      elseif health > maxhealth * 0.45 then
-         return "hp_wounded", healthcolors.wounded
-      elseif health > maxhealth * 0.2 then
-         return "hp_badwnd", healthcolors.badwound
-      else
-         return "hp_death", healthcolors.death
-      end
    end
 
    local karmacolors = {

@@ -549,7 +549,7 @@ L.overtime     = "延長時間 "
 L.hastemode    = "急速模式 "
 
 -- TargetID health status
-L.hp_healthy   = "健康的 "
+L.hp_healthy   = "活的"
 L.hp_hurt      = "輕傷的 "
 L.hp_wounded   = "輕重傷的 "
 L.hp_badwnd    = "重傷的 "

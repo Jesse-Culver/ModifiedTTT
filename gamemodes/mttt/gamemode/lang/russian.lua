@@ -563,7 +563,7 @@ L.overtime     = "ДОП. ВРЕМЯ"
 L.hastemode    = "РЕЖИМ СПЕШКИ"
 
 -- TargetID health status
-L.hp_healthy   = "Здоров"
+L.hp_healthy   = "живой"
 L.hp_hurt      = "Слегка ранен"
 L.hp_wounded   = "Ранен"
 L.hp_badwnd    = "Тяжело ранен"

@@ -380,10 +380,19 @@ local rag_collide = CreateConVar("ttt_ragdoll_collide", "0")
 -- Creates client or server ragdoll depending on settings
 function CORPSE.Create(ply, attacker, dmginfo)
    if not IsValid(ply) then return end
-
+    print(dmginfo)
    local rag = ents.Create("prop_ragdoll")
-   if not IsValid(rag) then return nil end
+   --If player dies from burn damage only spawn a burnt corpse
+   if dmginfo:GetDamageType() == DMG_BURN or ply:IsOnFire() then
+    rag:SetPos(ply:GetPos())
+    rag:SetAngles(ply:GetAngles())
+    rag:SetModel(Model("models/Humans/Charple01.mdl"))
+    rag:Spawn()
+    rag:Activate()
+    return
+   end
 
+   if not IsValid(rag) then return nil end
    rag:SetPos(ply:GetPos())
    rag:SetModel(ply:GetModel())
    rag:SetSkin(ply:GetSkin())

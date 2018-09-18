@@ -4,7 +4,7 @@ AddCSLuaFile()
 
 
 SWEP.PrintName          = "Russian Roulette"
-SWEP.Slot               = 6
+SWEP.Slot               = 7
 
 SWEP.ViewModelFOV       = 54
 SWEP.ViewModelFlip      = false

@@ -1,0 +1,357 @@
+digraph {
+    graph [pad="0.5", nodesep="0.5", ranksep="2"];
+    node [shape=plain]
+    rankdir=LR;
+
+
+ShotGuns [label=<
+<table border="0" cellborder="1" cellspacing="0">
+  <tr>  <td>Shotguns</td> </tr>
+  <tr>
+    <td><i>Name</i></td>
+    <td><i>Pellets</i></td>
+    <td><i>Damage Per Pellet</i></td>
+    <td><i>Delay</i></td>
+    <td><i>Cone</i></td>
+    <td><i>Clip Size</i></td>
+    <td><i>Automatic</i></td>
+    <td><i>Who Can Buy?</i></td>
+  </tr>
+  <tr>
+    <td>Pump Shotgun</td>
+    <td>8</td>
+    <td>14</td>
+    <td>1.2</td>
+    <td>0.08</td>
+    <td>8</td>
+    <td>Yes</td> 
+    <td>Spawn</td>
+  </tr>
+  <tr>
+    <td>Vanilla Shotgun</td> //Name
+    <td>8</td>  //Pellets
+    <td>11</td> //Damage per pellet
+    <td>0.8</td> //Delay
+    <td>0.085</td> //Cone
+    <td>8</td> //Clip Size
+    <td>Yes</td> //Automatic
+    <td>Spawn</td> //Who can buy
+  </tr>
+</table>>];
+
+Rifles [label=<
+<table border="0" cellborder="1" cellspacing="0">
+  <tr>  <td>Rifles</td> </tr>
+  <tr>
+    <td><i>Name</i></td>
+    <td><i>Damage</i></td>
+    <td><i>Delay</i></td>
+    <td><i>Cone</i></td>
+    <td><i>Recoil</i></td>
+    <td><i>Clip Size</i></td>
+    <td><i>Automatic</i></td>
+    <td><i>Who Can Buy?</i></td>
+  </tr>
+  <tr>  
+    <td>AK47</td> 
+    <td>24</td> 
+    <td>0.1</td> 
+    <td>0.025</td> 
+    <td>1.7</td>
+    <td>30</td> 
+    <td>Yes</td> 
+    <td>Traitor</td>  
+  </tr>
+  <tr>  
+    <td>AUG</td> 
+    <td>17</td> 
+    <td>0.09</td> 
+    <td>0.025</td> 
+    <td>1.04</td>
+    <td>30</td> 
+    <td>Yes</td> 
+    <td>Traitor</td>  
+  </tr>
+  <tr>  
+    <td>FAMAS</td> 
+    <td>17</td> 
+    <td>0.08</td> 
+    <td>0.025</td> 
+    <td>0.8</td>
+    <td>30</td> 
+    <td>Yes</td> 
+    <td>Spawn</td>  
+  </tr>
+  <tr>  
+    <td>Galil</td> 
+    <td>18</td> 
+    <td>0.095</td> 
+    <td>0.025</td> 
+    <td>0.8</td>
+    <td>30</td> 
+    <td>Yes</td> 
+    <td>Spawn</td>  
+  </tr>
+  <tr>  
+    <td>Slienced M4A1</td> //Name
+    <td>19</td> //Damage
+    <td>0.12</td> //Delay
+    <td>0.018</td> //Cone
+    <td>1.2</td> //Recoil
+    <td>30</td> //Clip Size
+    <td>Yes</td> //Automatic
+    <td>Traitor</td>  //Who Can Buy
+  </tr>
+  <tr>  
+    <td>M16</td> //Name
+    <td>23</td> //Damage
+    <td>0.19</td> //Delay
+    <td>0.018</td> //Cone
+    <td>1.6</td> //Recoil
+    <td>20</td> //Clip Size
+    <td>Yes</td> //Automatic
+    <td>Spawn</td>  //Who Can Buy
+  </tr>
+</table>>];
+
+SniperRifles [label=<
+<table border="0" cellborder="1" cellspacing="0">
+  <tr>  <td>Sniper</td> </tr>
+  <tr>
+    <td><i>Name</i></td>
+    <td><i>Damage</i></td>
+    <td><i>Delay</i></td>
+    <td><i>Cone</i></td>
+    <td><i>Recoil</i></td>
+    <td><i>Clip Size</i></td>
+    <td><i>Automatic</i></td>
+    <td><i>Who Can Buy?</i></td>
+  </tr>
+  <tr>  
+    <td>AWP</td> 
+    <td>500</td> 
+    <td>2</td> 
+    <td>10</td>
+    <td>0.001</td> 
+    <td>2</td> 
+    <td>No</td> 
+    <td>Item Crate</td>  
+  </tr>
+  <tr>  
+    <td>GS3G1</td> 
+    <td>37</td> 
+    <td>220</td> 
+    <td>0.3</td>
+    <td>0.005</td> 
+    <td>20</td> 
+    <td>No</td> 
+    <td>Item Crate</td>  
+  </tr>
+  <tr>  
+    <td>SG552</td> //Name
+    <td>18</td> //Damage
+    <td>0.11</td> //Delay
+    <td>0.025</td> //Cone
+    <td>1.04</td> //Recoil
+    <td>30</td> //Clip Size
+    <td>Yes</td> //Automatic
+    <td>Spawn</td>  //Who Can Buy
+  </tr>
+  <tr>  
+    <td>Scout</td> //Name
+    <td>50</td> //Damage
+    <td>1.5</td> //Delay
+    <td>0.005</td> //Cone
+    <td>7</td> //Recoil
+    <td>10</td> //Clip Size
+    <td>Yes</td> //Automatic
+    <td>Spawn</td>  //Who Can Buy
+  </tr>
+</table>>];
+
+Pistols [label=<
+<table border="0" cellborder="1" cellspacing="0">
+  <tr>  <td>Pistols</td> </tr>
+  <tr>
+    <td><i>Name</i></td>
+    <td><i>Damage</i></td>
+    <td><i>Delay</i></td>
+    <td><i>Cone</i></td>
+    <td><i>Recoil</i></td>
+    <td><i>Clip Size</i></td>
+    <td><i>Automatic</i></td>
+    <td><i>Who Can Buy?</i></td>
+  </tr>
+  <tr>  
+    <td>Glock</td> //Name
+    <td>12</td> //Damage
+    <td>0.10</td> //Delay
+    <td>0.028</td> //Cone
+    <td>0.9</td> //Recoil
+    <td>20</td> //Clip Size
+    <td>Yes</td> //Automatic
+    <td>Spawn</td>  //Who can buy
+  </tr>
+  <tr>  
+    <td>P228</td> //Name
+    <td>15</td> //Damage
+    <td>0.25</td> //Delay
+    <td>0.028</td> //Cone
+    <td>0.9</td> //Recoil
+    <td>20</td> //Clip Size
+    <td>Yes</td> //Automatic
+    <td>Spawn</td>  //Who can buy
+  </tr>
+  <tr>  
+    <td>HL2 Pistol</td> //Name
+    <td>12</td> //Damage
+    <td>0.15</td> //Delay
+    <td>0.025</td> //Cone
+    <td>0.8</td> //Recoil
+    <td>20</td> //Clip Size
+    <td>Yes</td> //Automatic
+    <td>Spawn</td>  //Who can buy
+  </tr>
+  <tr>  
+    <td>HL2 Revolver</td> //Name
+    <td>500</td> //Damage
+    <td>2</td> //Delay
+    <td>0.0325</td> //Cone
+    <td>0.8</td> //Recoil
+    <td>1</td> //Clip Size
+    <td>No</td> //Automatic
+    <td>Detective</td>  //Who can buy
+  </tr>
+  <tr>  
+    <td>Silent Pistol</td> //Name
+    <td>28</td> //Damage
+    <td>0.38</td> //Delay
+    <td>0.02</td> //Cone
+    <td>1.35</td> //Recoil
+    <td>20</td> //Clip Size
+    <td>Yes</td> //Automatic
+    <td>Traitor</td>  //Who can buy
+  </tr>
+  <tr>  
+    <td>Vanilla Pistol</td> //Name
+    <td>25</td> //Damage
+    <td>0.38</td> //Delay
+    <td>0.02</td> //Cone
+    <td>1.5</td> //Recoil
+    <td>20</td> //Clip Size
+    <td>Yes</td> //Automatic
+    <td>Spawn</td>  //Who can buy
+  </tr>
+  <tr>  
+    <td>Deagle</td> //Name
+    <td>37</td> //Damage
+    <td>0.6</td> //Delay
+    <td>0.02</td> //Cone
+    <td>6</td> //Recoil
+    <td>8</td> //Clip Size
+    <td>Yes</td> //Automatic
+    <td>Spawn</td>  //Who can buy
+  </tr>
+</table>>];
+
+SMGS [label=<
+<table border="0" cellborder="1" cellspacing="0">
+  <tr>  <td>SMGS</td> </tr>
+  <tr>
+    <td><i>Name</i></td>
+    <td><i>Damage</i></td>
+    <td><i>Delay</i></td>
+    <td><i>Cone</i></td>
+    <td><i>Recoil</i></td>
+    <td><i>Clip Size</i></td>
+    <td><i>Automatic</i></td>
+    <td><i>Who Can Buy?</i></td>
+  </tr>
+  <tr>  
+    <td>MP5 Navy</td> //Name
+    <td>18</td> //Damage
+    <td>0.08</td> //Delay
+    <td>0.03</td> //Cone
+    <td>0.6</td> //Recoil
+    <td>30</td> //Clip Size
+    <td>Yes</td> //Automatic
+    <td>Spawn</td>  //Who can buy
+  </tr>
+  <tr>  
+    <td>FN P90</td> //Name
+    <td>14</td> //Damage
+    <td>0.065</td> //Delay
+    <td>0.032</td> //Cone
+    <td>0.8</td> //Recoil
+    <td>50</td> //Clip Size
+    <td>Yes</td> //Automatic
+    <td>Detective/Item Box</td>  //Who can buy
+  </tr>
+  <tr>  
+    <td>MP7</td> //Name
+    <td>15</td> //Damage
+    <td>0.07</td> //Delay
+    <td>0.026</td> //Cone
+    <td>0.5</td> //Recoil
+    <td>30</td> //Clip Size
+    <td>Yes</td> //Automatic
+    <td>Spawn</td>  //Who can buy
+  </tr>
+  <tr>  
+    <td>Stungun</td> //Name
+    <td>9</td> //Damage
+    <td>0.1</td> //Delay
+    <td>0.02</td> //Cone
+    <td>1.2</td> //Recoil
+    <td>30</td> //Clip Size
+    <td>Yes</td> //Automatic
+    <td>Detective</td>  //Who can buy
+  </tr>
+  <tr>  
+    <td>Silent TMP</td> //Name
+    <td>16</td> //Damage
+    <td>0.07</td> //Delay
+    <td>0.025</td> //Cone
+    <td>1.2</td> //Recoil
+    <td>30</td> //Clip Size
+    <td>Yes</td> //Automatic
+    <td>Item Box</td>  //Who can buy
+  </tr>
+  <tr>  
+    <td>MAC10</td> //Name
+    <td>12</td> //Damage
+    <td>0.065</td> //Delay
+    <td>0.03</td> //Cone
+    <td>1.15</td> //Recoil
+    <td>30</td> //Clip Size
+    <td>Yes</td> //Automatic
+    <td>Spawn</td>  //Who can buy
+  </tr>
+</table>>];
+
+Heavy [label=<
+<table border="0" cellborder="1" cellspacing="0">
+  <tr>  <td>Heavy</td> </tr>
+  <tr>
+    <td><i>Name</i></td>
+    <td><i>Damage</i></td>
+    <td><i>Delay</i></td>
+    <td><i>Cone</i></td>
+    <td><i>Recoil</i></td>
+    <td><i>Clip Size</i></td>
+    <td><i>Automatic</i></td>
+    <td><i>Who Can Buy?</i></td>
+  </tr>
+  <tr>  
+    <td>H.U.G.E.-249</td> //Name
+    <td>7</td> //Damage
+    <td>0.06</td> //Delay
+    <td>0.09</td> //Cone
+    <td>1.9</td> //Recoil
+    <td>150</td> //Clip Size
+    <td>Yes</td> //Automatic
+    <td>Spawn</td>  //Who Can Buy
+  </tr>
+</table>>];
+
+}

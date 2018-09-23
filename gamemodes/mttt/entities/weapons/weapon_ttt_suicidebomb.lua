@@ -1,7 +1,7 @@
 AddCSLuaFile()
 
 if CLIENT then
-   SWEP.PrintName = "Jihad Bomb"
+   SWEP.PrintName = "Suicide Bomb"
    SWEP.Slot = 6
    SWEP.Icon = "vgui/ttt/icon_c4"
    SWEP.IconLetter = "I"
@@ -50,26 +50,27 @@ function SWEP:PrimaryAttack()
 
    if ( SERVER ) then
       timer.Simple( 2, function() self:Explode() end )
-      self.Owner:EmitSound( "NPC_FastZombie.Scream" )
+      self.Owner:EmitSound( "vo/npc/barney/ba_laugh04.wav" )
    end
 end
 
 function SWEP:Explode()
-   local k, v
-
+  if SERVER then 
+  local k, v
    local ent = ents.Create( "env_explosion" )
    ent:SetPos( self.Owner:GetPos() )
    ent:SetOwner( self.Owner )
    ent:SetKeyValue( "iMagnitude", "200" )
    ent:Spawn()
    ent:Fire( "Explode", 0, 0 )
-   ent:EmitSound( "d3_citadel.timestop_explosion_3", 140 )
+   ent:EmitSound( "ambient/explosions/explode_4.wav", 140 )
    self:Remove()
+  end
 end
 
 if CLIENT then
    SWEP.EquipMenuData = {
       type = "Weapon",
-      desc = "Sacrifice yourself to Allah.\n\nYour 72 virgins await."
+      desc = "Take you and everyone else with you"
    }
 end

@@ -4,6 +4,8 @@
 	"tags"		:	[ "fun" ],
 	"ignore"	:
 	[
+		"*.dot",
+		"WeaponData.png",
 		"*.psd",
     "*.git/*",
     "*.pdn",

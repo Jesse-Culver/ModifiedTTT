@@ -122,10 +122,14 @@ function FillPlayerModelTable()
 end
 
 function GetRandomPlayerModel()
-   return table.Random(mttt_playermodels)
+  local choice = table.Random(mttt_playermodels)
+  print(choice)
+  return choice
 end
 function GetRandomDetectiveModel()
-  return table.Random(mttt_detectivemodels)
+  local detective = table.Random(mttt_detectivemodels)
+  print(detective)
+  return detective
 end
 
 local ttt_playercolors = {

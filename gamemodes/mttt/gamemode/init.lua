@@ -746,6 +746,7 @@ function BeginRound()
    SetRoundState(ROUND_ACTIVE)
    LANG.Msg("round_started")
    ServerLog("Round proper has begun...\n")
+   DamageLog(Format("MAP: %s",game.GetMap()))
 
    GAMEMODE:UpdatePlayerLoadouts() -- needs to happen when round_active
 
@@ -924,6 +925,7 @@ function SelectRoles()
       end
 
       v:SetRole(ROLE_INNOCENT)
+      DamageLog(Format("%s is playing!",v:Nick()))
    end
 
    -- determine how many of each role we want
@@ -931,6 +933,8 @@ function SelectRoles()
    local traitor_count = GetTraitorCount(choice_count)
    local det_count = GetDetectiveCount(choice_count)
 
+   DamageLog(Format("Traitor Count: %d",math.Round(traitor_count)))
+   DamageLog(Format("Detective Count: %d",math.Round(det_count)))
    if choice_count == 0 then return end
 
    -- first select traitors
@@ -947,6 +951,7 @@ function SelectRoles()
       if IsValid(pply) and
          ((not table.HasValue(prev_roles[ROLE_TRAITOR], pply)) or (math.random(1, 3) == 2)) then
          pply:SetRole(ROLE_TRAITOR)
+         DamageLog(Format("Traitor: ",pply:Nick()))
 
          table.remove(choices, pick)
          ts = ts + 1
@@ -966,6 +971,7 @@ function SelectRoles()
          for k, pply in pairs(choices) do
             if IsValid(pply) then
                pply:SetRole(ROLE_DETECTIVE)
+               DamageLog(Format("Detective: ",pply:Nick()))
             end
          end
 
@@ -987,6 +993,7 @@ function SelectRoles()
          -- alternatives)
          if not pply:GetAvoidDetective() then
             pply:SetRole(ROLE_DETECTIVE)
+            DamageLog(Format("Detective: ",pply:Nick()))
             ds = ds + 1
          end
 

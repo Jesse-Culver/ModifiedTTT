@@ -951,7 +951,7 @@ function SelectRoles()
       if IsValid(pply) and
          ((not table.HasValue(prev_roles[ROLE_TRAITOR], pply)) or (math.random(1, 3) == 2)) then
          pply:SetRole(ROLE_TRAITOR)
-         DamageLog(Format("Traitor: ",pply:Nick()))
+         DamageLog(Format("Traitor: %s",pply:Nick()))
 
          table.remove(choices, pick)
          ts = ts + 1
@@ -971,7 +971,7 @@ function SelectRoles()
          for k, pply in pairs(choices) do
             if IsValid(pply) then
                pply:SetRole(ROLE_DETECTIVE)
-               DamageLog(Format("Detective: ",pply:Nick()))
+               DamageLog(Format("Detective: %s",pply:Nick()))
             end
          end
 
@@ -993,7 +993,7 @@ function SelectRoles()
          -- alternatives)
          if not pply:GetAvoidDetective() then
             pply:SetRole(ROLE_DETECTIVE)
-            DamageLog(Format("Detective: ",pply:Nick()))
+            DamageLog(Format("Detective: %s",pply:Nick()))
             ds = ds + 1
          end
 

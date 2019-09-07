@@ -123,12 +123,14 @@ end
 
 function GetRandomPlayerModel()
   local choice = table.Random(mttt_playermodels)
-  print(choice)
+  DamageLog(Format("Innocent Model: %s",choice))
+  --print(choice)
   return choice
 end
 function GetRandomDetectiveModel()
   local detective = table.Random(mttt_detectivemodels)
-  print(detective)
+  DamageLog(Format("Detective Model: %s",choice))
+  --print(detective)
   return detective
 end
 
